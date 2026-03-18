@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOD SKIN FREE FIRE CÓ TÂM - Trang Chủ</title>
+    <link rel="stylesheet" href="STYLE.CSS">
+    <link rel="stylesheet" href="PCBLOCK.CSS">
+
+    <!-- EMBEDDED CONFIG - FULL CONFIG -->
+    <script id="config-data" type="application/json">
+    {"site":{"title":"MOD SKIN FREE FIRE CÓ TÂM","header":"MOD SKIN FREE FIRE CÓ TÂM"},"links":{"youtube_link":"https://www.youtube.com/@MODSKINCOTAM/videos","screenshot_link":"https://raw.githubusercontent.com/modskinff/MOD-SKIN-C-T-M-/main/Desktop%20Screenshot%202026.03.17%20-%2020.52.09.26.png","android_video":"https://youtube.com/shorts/07pWCQqTWsQ?si=uJ9TDgPha1uAXRSE","ios_video":"https://youtube.com/shorts/lKkbqB5B-To?si=yuBjN5w9Ttd6wccD"},"featured":{"enabled":true,"image":"https://raw.githubusercontent.com/modskinff/MOD-SKIN-C-T-M-/main/APP%20MOD%20SKIN%20FREE%20FIRE%20M%E1%BB%9AI%20NH%E1%BA%A4T%20V7.png","title":"APP MOD SKIN FREE FIRE","price":"FREE","buttons":{"download":{"enabled":true,"label":"TẢI NGAY","link":"https://taixuongmienphi.click/s/mod-chatz1u1n52mmr8akp2"}}},"categories":["Trang Phục","Nhân Vật","Skin Súng","Bom Keo","Map"],"products":[{"id":"#MAPV1","title":"MAP MINECRAFT V2","price":"FREE","category":"Map","status":"NEW","image":"https://sf-static.upanhlaylink.com/img/image_20260317cdf232044266fabc01e4dcd216803e59.jpg","buttons":{"v1ffth":{"enabled":true,"label":"FFTH","link":"https://github.com/ADMINXMINHPHONG/PixelHudMods_GLOBAL/raw/refs/heads/main/v2%20com.dts.freefireth.zip"},"v1ffmax":{"enabled":false,"label":"V1FFMAX","link":""}}},{"id":"#MAPV2","title":"MAP MINECRAFT V 2 ","price":"FREE","category":"Map","status":"NEW","image":"https://sf-static.upanhlaylink.com/img/image_202603174e2bc4468a9355c5e2ddd35aee0bda15.jpg","buttons":{"v1ffth":{"enabled":true,"label":"FFTH","link":"https://github.com/ADMINXMINHPHONG/PixelHudMods_GLOBAL/raw/refs/heads/main/dlc%20Minecraft%20v1.7z"},"v1ffmax":{"enabled":false,"label":"V1FFMAX","link":""}}}],"footer":{"text":"MOD SKIN FREE FIRE CÓ TÂM - © 2026"}}
+    </script>
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div id="loadingScreen">
+        <div class="loading-logo">
+            <div class="loading-logo-circle"></div>
+            <div class="loading-logo-circle"></div>
+            <div class="loading-logo-circle"></div>
+        </div>
+        <div class="loading-text">ĐANG TẢI...</div>
+    </div>
+
+    <!-- Particles Background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- PC Block -->
+    <div class="pc-block-overlay" id="pcBlock">
+        <div class="pc-block-content">
+            <div class="pc-block-icon">🚫</div>
+            <h1 class="pc-block-title">Truy Cập Bị Từ Chối</h1>
+            <p class="pc-block-message"><strong>Giao diện cho máy tính hiện chưa được thiết lập.</strong><br>Vui lòng
+                dùng điện thoại hoặc nhấn F12 chuyển sang chế độ điện thoại.</p>
+            <button class="pc-block-btn" onclick="window.location.href='https://google.com'">← Quay Lại Google</button>
+        </div>
+    </div>
+
+    <!-- Mobile Content -->
+    <div class="mobile-content" id="mobileContent">
+        <div class="ken-header">MOD SKIN FREE FIRE CÓ TÂM</div>
+        <div class="main-nav">
+            <a href="TRANGCHU.HTML" class="nav-item active">Trang chủ <span class="nav-count" id="navCount">0</span></a>
+            <a href="HUONGDAN.HTML" class="nav-item">Hướng dẫn</a>
+            <a href="YOUTUBE.HTML" class="nav-item">Youtube</a>
+            <a href="BUYMOD.HTML" class="nav-item">Mod theo yêu cầu</a>
+        </div>
+
+        <div class="featured">
+            <div class="featured-banner"><img src="" alt="Featured"></div>
+            <div class="featured-info">
+                <h1></h1>
+                <p class="desc"></p>
+                <div class="featured-price"></div>
+                <div class="buttons-group"></div>
+            </div>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" id="searchInput" class="search-input"
+                placeholder="🔍 Tìm kiếm sản phẩm (ID, tên, phiên bản...)...">
+        </div>
+
+        <div class="tab-bar" id="tab-bar"></div>
+        <div class="shop-container" id="shop-items"></div>
+        <div class="pagination" id="pagination"></div>
+
+        <div id="confirm-modal">
+            <div class="modal-content">
+                <h3 style="margin:0 0 14px;color:#fff">Xác nhận mở link</h3>
+                <p>Bạn chắc chắn muốn mở <strong id="modal-type" style="color:var(--primary-color)"></strong> ?</p>
+                <div class="modal-buttons">
+                    <button class="modal-btn modal-btn-cancel" onclick="hideModal()">Hủy</button>
+                    <button class="modal-btn modal-btn-confirm" onclick="openConfirmedLink()">OK Mở Link</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="PCBLOCK.JS"></script>
+    <script src="SCRIPT.JS"></script>
+    <script>
+        // Create particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            if (!container) return;
+            const particleCount = 30;
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                container.appendChild(particle);
+            }
+        }
+        createParticles();
+
+        // Hide loading screen after content loaded
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const loading = document.getElementById('loadingScreen');
+                if (loading) loading.classList.add('hidden');
+            }, 750);
+        });
+    </script>
+</body>
+
+</html>
