@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MOD SKIN FREE FIRE CÓ TÂM - Hướng Dẫn</title>
+    <title>MOD SKIN FREE FIRE CÓ TÂM - Mod Theo Yêu Cầu</title>
     <link rel="stylesheet" href="STYLE.CSS">
     <link rel="stylesheet" href="PCBLOCK.CSS">
     <!-- CONFIG: Đọc từ CONFIG.JS -->
@@ -41,53 +41,23 @@
         <div class="ken-header">MOD SKIN FREE FIRE CÓ TÂM</div>
         <div class="main-nav">
             <a href="TRANGCHU.HTML" class="nav-item">Trang chủ</a>
-            <a href="HUONGDAN.HTML" class="nav-item active">Hướng dẫn</a>
+            <a href="HUONGDAN.HTML" class="nav-item">Hướng dẫn</a>
             <a href="YOUTUBE.HTML" class="nav-item">Youtube</a>
-            <a href="BUYMOD.HTML" class="nav-item">Mod theo yêu cầu</a>
+            <a href="BUYMOD.HTML" class="nav-item active">Mod theo yêu cầu</a>
         </div>
 
-        <div class="instruction-section">
-            <div class="instruction-card">
-                <h2>📱 Các bước chi tiết dành cho Android</h2>
-                <ol>
-                    <li>Bấm vào liên kết và tải file</li>
-                    <li>Cài đặt ứng dụng <strong>ZArchiver</strong></li>
-                    <li>Giải nén file MOD bằng ZArchiver</li>
-                    <li>Giữ vào thư mục đã giải nén và chọn <strong>Sao chép</strong> → <strong>dán vào
-                            /Android/Data</strong></li>
-                    <li>Khi ở thư mục <strong>/Android/Data</strong>, nhấn <strong>Dán</strong> và áp dụng cho tất cả
-                        các tệp để hoàn tất</li>
-                </ol>
-                <a id="androidVideoLink" href="#" class="video-link" target="_blank">🎬 Xem video hướng dẫn Android</a>
-            </div>
-
-            <div class="instruction-card">
-                <h2>🍎 Các bước chi tiết dành cho iOS</h2>
-                <ol>
-                    <li>Bấm vào liên kết và tải file</li>
-                    <li>Cài đặt ứng dụng <strong>Filza</strong></li>
-                    <li>Giải nén file MOD</li>
-                    <li>Ấn vào file mod cho đến khi thấy file nhân vật ví dụ: <strong>optionalab_avatar_66</strong></li>
-                    <li>Giữ vào và ấn <strong>sao chép đến file thư mục gốc của game</strong></li>
-                </ol>
-                <a id="iosVideoLink" href="#" class="video-link" target="_blank">🎬 Xem video hướng dẫn iOS</a>
+        <div class="content-section">
+            <div class="content-card">
+                <div class="order-icon">🛒</div>
+                <h2>Mod Theo Yêu Cầu</h2>
+                <p>Liên hệ để đặt mod skin theo yêu cầu của bạn!</p>
+                <a href="http://t.me/EmethModFF" class="contact-btn">Liên Hệ Ngay</a>
             </div>
         </div>
     </div>
 
     <script src="PCBLOCK.JS"></script>
     <script>
-        // Load video links from window.CONFIG_DATA
-        function loadVideoLinks() {
-            if (window.CONFIG_DATA) {
-                const links = window.CONFIG_DATA.links || {};
-                if (links.android_video) document.getElementById('androidVideoLink').href = links.android_video;
-                if (links.ios_video) document.getElementById('iosVideoLink').href = links.ios_video;
-                console.log('✅ Đã load video links');
-            }
-        }
-        loadVideoLinks();
-
         // Create particles
         function createParticles() {
             const container = document.getElementById('particles');

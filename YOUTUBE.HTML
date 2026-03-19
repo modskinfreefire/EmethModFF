@@ -146,24 +146,23 @@
             </div>
             <script src="PCBLOCK.JS"></script>
             <script>
-                async function loadLinks() {
-                    try {
-                        const response = await fetch('CONFIG.JSON');
-                        if (response.ok) {
-                            const config = await response.json();
-                            const links = config.links || {};
-                            if (links.youtube_link) document.getElementById('youtubeLink').href = links.youtube_link;
-                            if (links.screenshot_link) document.getElementById('screenshotImg').src = links.screenshot_link;
-                            if (links.android_video) {
-                                const videoId = links.android_video.split('/').pop().split('?')[0];
-                                document.getElementById('androidVideo').src = 'https://www.youtube.com/embed/' + videoId;
-                            }
-                            if (links.ios_video) {
-                                const videoId = links.ios_video.split('/').pop().split('?')[0];
-                                document.getElementById('iosVideo').src = 'https://www.youtube.com/embed/' + videoId;
-                            }
+                function loadLinks() {
+                    if (window.CONFIG_DATA) {
+                        const links = window.CONFIG_DATA.links || {};
+                        if (links.youtube_link) document.getElementById('youtubeLink').href = links.youtube_link;
+                        if (links.screenshot_link) document.getElementById('screenshotImg').src = links.screenshot_link;
+                        if (links.android_video) {
+                            const videoId = links.android_video.split('/').pop().split('?')[0];
+                            const androidFrame = document.getElementById('androidVideo');
+                            if (androidFrame) androidFrame.src = 'https://www.youtube.com/embed/' + videoId;
                         }
-                    } catch (e) { console.error('Lỗi tải config:', e); }
+                        if (links.ios_video) {
+                            const videoId = links.ios_video.split('/').pop().split('?')[0];
+                            const iosFrame = document.getElementById('iosVideo');
+                            if (iosFrame) iosFrame.src = 'https://www.youtube.com/embed/' + videoId;
+                        }
+                        console.log('✅ Đã load youtube links');
+                    }
                 }
                 loadLinks();
             </script>

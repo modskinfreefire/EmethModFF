@@ -9,52 +9,27 @@ let currentPage = 1;
 const ITEMS_PER_PAGE = 10;
 let searchQuery = '';
 
-// Load config - Priority: BANNER.JSON > CONFIG.JSON > Embedded > Fallback
+// Load config - Đọc trực tiếp từ CONFIG.JS (window.CONFIG_DATA) và BANNER.JS
 async function loadConfig() {
-    // Priority 1: Fetch BANNER.JSON for featured data
-    try {
-        const bannerResponse = await fetch('BANNER.JSON?' + Date.now());
-        if (bannerResponse.ok) {
-            const bannerConfig = await bannerResponse.json();
-            if (bannerConfig.featured) {
-                CONFIG.featured = bannerConfig.featured;
-                console.log('%c✅ Đã tải BANNER.JSON', 'color:#10b981;font-size:14px;font-weight:bold');
-            }
-        }
-    } catch (e) {
-        console.warn('⚠️ Không fetch được BANNER.JSON');
+    // 1. Kiểm tra CONFIG.JS (window.CONFIG_DATA)
+    if (window.CONFIG_DATA) {
+        CONFIG = { ...getFallbackConfig(), ...window.CONFIG_DATA };
+        console.log('%c✅ Đã load CONFIG.JS', 'color:#10b981;font-size:14px;font-weight:bold');
+    } else {
+        // ERROR DIAGNOSTIC: Nếu file CONFIG.JS có nội dung nhưng không có window.CONFIG_DATA 
+        // thì khả năng cao là người dùng dán nhầm JSON thuần vào file .js
+        console.error('❌ LỖI: Không tìm thấy window.CONFIG_DATA');
+        alert('⚠️ LỖI DỮ LIỆU: File CONFIG.JS bị sai định dạng!\n\nHãy đảm bảo bạn copy ĐÚNG FILE CONFIG.JS từ Admin, không phải copy nội dung của file JSON.');
+        CONFIG = getFallbackConfig();
     }
 
-    // Priority 2: Fetch CONFIG.JSON for full config
-    try {
-        const response = await fetch('CONFIG.JSON?' + Date.now());
-        if (response.ok) {
-            const config = await response.json();
-            CONFIG = { ...CONFIG, ...config };
-            console.log('%c✅ Đã tải CONFIG.JSON', 'color:#10b981;font-size:14px;font-weight:bold');
-            return true;
-        }
-    } catch (e) {
-        console.warn('⚠️ Không fetch được CONFIG.JSON');
+    // 2. Load BANNER.JS (nếu có)
+    if (window.BANNER_DATA && window.BANNER_DATA.featured) {
+        CONFIG.featured = window.BANNER_DATA.featured;
+        console.log('%c✅ Đã load BANNER.JS', 'color:#10b981;font-size:14px;font-weight:bold');
     }
 
-    // Priority 3: Embedded config in HTML (works on file://)
-    const configScript = document.getElementById('config-data');
-    if (configScript && configScript.textContent.trim()) {
-        try {
-            const embedded = JSON.parse(configScript.textContent.trim());
-            CONFIG = { ...CONFIG, ...embedded };
-            console.log('%c✅ Đã dùng config nhúng', 'color:#10b981;font-size:14px;font-weight:bold');
-            return true;
-        } catch (e) {
-            console.error('❌ Lỗi parse config nhúng:', e);
-        }
-    }
-
-    // Priority 4: Fallback config
-    console.warn('⚠️ Dùng config mặc định');
-    CONFIG = getFallbackConfig();
-    return false;
+    return true;
 }
 
 function getFallbackConfig() {
