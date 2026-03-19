@@ -1,3 +1,4 @@
+// AUTO-GENERATED from ADMIN
 window.CONFIG_DATA = {
     "site": {
         "title": "MOD SKIN FREE FIRE CÓ TÂM",
@@ -106,6 +107,26 @@ window.CONFIG_DATA = {
                 "v1ffmax": {
                     "enabled": false,
                     "label": "",
+                    "link": ""
+                }
+            }
+        },
+        {
+            "id": "#005",
+            "title": "ALOK",
+            "price": "FREE",
+            "category": "Trang Phục",
+            "status": "NEW",
+            "image": "https://sf-static.upanhlaylink.com/img/image_202603124e8f07d00a936a97f99515b710cd3a91.jpg",
+            "buttons": {
+                "v1ffth": {
+                    "enabled": true,
+                    "label": "V1FFTH",
+                    "link": "https://sf-static.upanhlaylink.com/img/image_202603124e8f07d00a936a97f99515b710cd3a91.jpg"
+                },
+                "v1ffmax": {
+                    "enabled": true,
+                    "label": "V1FFMAX",
                     "link": ""
                 }
             }
