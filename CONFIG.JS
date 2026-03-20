@@ -49,7 +49,7 @@ window.CONFIG_DATA = {
     {
       "id": "#NhanVat",
       "title": "IGNIS TƯỜNG LỬA",
-      "price": "VƯỢT LINK",
+      "price": "FREE",
       "category": "Trang Phục",
       "status": "",
       "image": "https://sf-static.upanhlaylink.com/img/image_20260320b456f70101d7889640f9c3895b828664.jpg",
