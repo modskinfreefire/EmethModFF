@@ -1,4 +1,7 @@
-// AUTO-GENERATED from ADMIN
+// AUTO-GENERATED from ADMIN PANEL
+// Exported: 2026-03-20T14:12:27.659Z
+// Usage: Upload this file to GitHub, web client will read window.CONFIG_DATA
+
 window.CONFIG_DATA = {
     "site": {
         "title": "MOD SKIN FREE FIRE CÓ TÂM",
@@ -126,6 +129,46 @@ window.CONFIG_DATA = {
                 },
                 "v1ffmax": {
                     "enabled": true,
+                    "label": "V1FFMAX",
+                    "link": ""
+                }
+            }
+        },
+        {
+            "id": "#MAPV2",
+            "title": "MAP MINECRAFT V2 V2",
+            "price": "FREE",
+            "category": "Map",
+            "status": "NEW",
+            "image": "https://sf-static.upanhlaylink.com/img/image_20260317cdf232044266fabc01e4dcd216803e59.jpg",
+            "buttons": {
+                "v1ffth": {
+                    "enabled": true,
+                    "label": "FFTH",
+                    "link": "https://github.com/ADMINXMINHPHONG/PixelHudMods_GLOBAL/raw/refs/heads/main/v2%20com.dts.freefireth.zip"
+                },
+                "v1ffmax": {
+                    "enabled": false,
+                    "label": "V1FFMAX",
+                    "link": ""
+                }
+            }
+        },
+        {
+            "id": "#12edda",
+            "title": "2",
+            "price": "1",
+            "category": "Trang Phục",
+            "status": "HOT",
+            "image": "https://sf-static.upanhlaylink.com/img/image_20260312606f30f988a4323f17b15b8db9a6e16f.jpg",
+            "buttons": {
+                "v1ffth": {
+                    "enabled": true,
+                    "label": "V1FFTH",
+                    "link": "https://sf-static.upanhlaylink.com/img/image_20260312606f30f988a4323f17b15b8db9a6e16f.jpg"
+                },
+                "v1ffmax": {
+                    "enabled": false,
                     "label": "V1FFMAX",
                     "link": ""
                 }
