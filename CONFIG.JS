@@ -1,6 +1,6 @@
 // AUTO-GENERATED from ADMIN OFFLINE
-// Exported: 2026-03-20T16:03:26.467Z
-// Folder: CONFIG_002
+// Exported: 2026-03-22T13:57:53.526Z
+// Folder: CONFIG_006
 // Copy file này vào folder website/
 
 window.CONFIG_DATA = {
@@ -16,25 +16,14 @@ window.CONFIG_DATA = {
   },
   "featured": {
     "enabled": true,
-    "image": "",
-    "title": "",
-    "description": "",
-    "price": "",
+    "image": "https://raw.githubusercontent.com/modskinff/MOD-SKIN-C-T-M-/main/APP%20MOD%20SKIN%20FREE%20FIRE%20M%E1%BB%9AI%20NH%E1%BA%A4T%20V7.png",
+    "title": "APP MOD SKIN FREE FIRE",
+    "price": "FREE",
     "buttons": {
       "download": {
-        "enabled": false,
+        "enabled": true,
         "label": "TẢI NGAY",
-        "link": ""
-      },
-      "v1ffth": {
-        "enabled": false,
-        "label": "V1FFTH",
-        "link": ""
-      },
-      "v1ffmax": {
-        "enabled": false,
-        "label": "V1FFMAX",
-        "link": ""
+        "link": "https://taixuongmienphi.click/s/mod-chatz1u1n52mmr8akp2"
       }
     }
   },
@@ -47,22 +36,82 @@ window.CONFIG_DATA = {
   ],
   "products": [
     {
-      "id": "#NhanVat",
-      "title": "IGNIS TƯỜNG LỬA",
+      "id": "#MAPV2",
+      "title": "MAP MINECRAFT V2 V2",
       "price": "FREE",
-      "category": "Trang Phục",
-      "status": "",
-      "image": "https://sf-static.upanhlaylink.com/img/image_20260320b456f70101d7889640f9c3895b828664.jpg",
+      "category": "Map",
+      "status": "NEW",
+      "image": "https://sf-static.upanhlaylink.com/img/image_20260317cdf232044266fabc01e4dcd216803e59.jpg",
       "buttons": {
         "v1ffth": {
           "enabled": true,
-          "label": "V1FFTH",
-          "link": "https://link4m.net/qcaX5C"
+          "label": "FFTH",
+          "link": "https://github.com/ADMINXMINHPHONG/PixelHudMods_GLOBAL/raw/refs/heads/main/v2%20com.dts.freefireth.zip"
         },
         "v1ffmax": {
           "enabled": false,
           "label": "V1FFMAX",
           "link": ""
+        }
+      }
+    },
+    {
+      "id": "#MAPV2",
+      "title": "MAP MINECRAFT V2 V2",
+      "price": "FREE",
+      "category": "Map",
+      "status": "NEW",
+      "image": "https://sf-static.upanhlaylink.com/img/image_20260317cdf232044266fabc01e4dcd216803e59.jpg",
+      "buttons": {
+        "v1ffth": {
+          "enabled": true,
+          "label": "FFTH",
+          "link": "https://github.com/ADMINXMINHPHONG/PixelHudMods_GLOBAL/raw/refs/heads/main/v2%20com.dts.freefireth.zip"
+        },
+        "v1ffmax": {
+          "enabled": false,
+          "label": "V1FFMAX",
+          "link": ""
+        }
+      }
+    },
+    {
+      "id": "#MAPV2",
+      "title": "MAP MINECRAFT V2 V2",
+      "price": "FREE",
+      "category": "Map",
+      "status": "NEW",
+      "image": "https://sf-static.upanhlaylink.com/img/image_20260317cdf232044266fabc01e4dcd216803e59.jpg",
+      "buttons": {
+        "v1ffth": {
+          "enabled": true,
+          "label": "FFTH",
+          "link": "https://github.com/ADMINXMINHPHONG/PixelHudMods_GLOBAL/raw/refs/heads/main/v2%20com.dts.freefireth.zip"
+        },
+        "v1ffmax": {
+          "enabled": false,
+          "label": "V1FFMAX",
+          "link": ""
+        }
+      }
+    },
+    {
+      "id": "#r1d",
+      "title": "e12",
+      "price": "#13",
+      "category": "Skin Súng",
+      "status": "NEW",
+      "image": "https://sf-static.upanhlaylink.com/img/image_20260312e4a96743dcdc2c873c77e518e4c846f7.jpg",
+      "buttons": {
+        "v1ffth": {
+          "enabled": true,
+          "label": "V1FFTH",
+          "link": "https://sf-static.upanhlaylink.com/img/image_20260312e4a96743dcdc2c873c77e518e4c846f7.jpg"
+        },
+        "v1ffmax": {
+          "enabled": true,
+          "label": "V1FFMAX",
+          "link": "https://sf-static.upanhlaylink.com/img/image_20260312e4a96743dcdc2c873c77e518e4c846f7.jpg"
         }
       }
     }
@@ -71,4 +120,3 @@ window.CONFIG_DATA = {
     "text": "MOD SKIN FREE FIRE CÓ TÂM - © 2026"
   }
 };
-
