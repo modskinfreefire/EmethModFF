@@ -10,20 +10,37 @@ const ITEMS_PER_PAGE = 10;
 let searchQuery = '';
 
 // Load config - Đọc trực tiếp từ CONFIG.JS (window.CONFIG_DATA) và BANNER.JS
+// Load config - Đọc từ CONFIG.JSON (ưu tiên) hoặc CONFIG.JS (fallback)
 async function loadConfig() {
-    // 1. Kiểm tra CONFIG.JS (window.CONFIG_DATA)
-    if (window.CONFIG_DATA) {
-        CONFIG = { ...getFallbackConfig(), ...window.CONFIG_DATA };
-        console.log('%c✅ Đã load CONFIG.JS', 'color:#10b981;font-size:14px;font-weight:bold');
+    let loadedConfig = null;
+
+    // 1. Thử tải CONFIG.JSON trước (Modern solution)
+    try {
+        const response = await fetch('CONFIG.JSON?t=' + Date.now());
+        if (response.ok) {
+            loadedConfig = await response.json();
+            console.log('%c✅ Đã tải CONFIG.JSON', 'color:#10b981;font-size:14px;font-weight:bold');
+        }
+    } catch (e) {
+        console.warn('⚠️ Không thể tải CONFIG.JSON (có thể do mở file://). Đang thử CONFIG.JS...');
+    }
+
+    // 2. Nếu JSON thất bại, kiểm tra CONFIG.JS (window.CONFIG_DATA)
+    if (!loadedConfig && window.CONFIG_DATA) {
+        loadedConfig = window.CONFIG_DATA;
+        console.log('%c✅ Đã dùng CONFIG.JS (Fallback)', 'color:#10b981;font-size:14px;font-weight:bold');
+    }
+
+    // 3. Xử lý kết quả
+    if (loadedConfig) {
+        CONFIG = { ...getFallbackConfig(), ...loadedConfig };
     } else {
-        // ERROR DIAGNOSTIC: Nếu file CONFIG.JS có nội dung nhưng không có window.CONFIG_DATA 
-        // thì khả năng cao là người dùng dán nhầm JSON thuần vào file .js
-        console.error('❌ LỖI: Không tìm thấy window.CONFIG_DATA');
-        alert('⚠️ LỖI DỮ LIỆU: File CONFIG.JS bị sai định dạng!\n\nHãy đảm bảo bạn copy ĐÚNG FILE CONFIG.JS từ Admin, không phải copy nội dung của file JSON.');
+        console.error('❌ LỖI: Không tìm thấy dữ liệu cấu hình (JSON hoặc JS)');
+        alert('⚠️ LỖI DỮ LIỆU: Không thể tải danh sách sản phẩm!\n\nHãy đảm bảo file CONFIG.JSON hoặc CONFIG.JS tồn tại trong thư mục website/ và đúng định dạng.');
         CONFIG = getFallbackConfig();
     }
 
-    // 2. Load BANNER.JS (nếu có)
+    // 4. Load BANNER.JS (nếu có)
     if (window.BANNER_DATA && window.BANNER_DATA.featured) {
         CONFIG.featured = window.BANNER_DATA.featured;
         console.log('%c✅ Đã load BANNER.JS', 'color:#10b981;font-size:14px;font-weight:bold');
@@ -166,7 +183,7 @@ function renderProducts() {
     container.innerHTML = '';
 
     // Filter by category
-    let filtered = CONFIG.products;
+    let filtered = [...(CONFIG.products || [])].reverse(); // Newest first
     if (currentCategory !== "Tất cả") {
         filtered = filtered.filter(item => item.category === currentCategory);
     }
